@@ -76,19 +76,21 @@ const TicTacToe: React.FC = () => {
   };
 
   return (
-    <div id="gameContainer">
+    <div className="container">
       <h1>Tic Tac Toe</h1>
-      <div id="cellContainer">
-        {options.map((value, index) => (
-          <div key={index} className="cell" onClick={() => cellClicked(index)}>
-            <div>{value}</div>
-          </div>
-        ))}
+      <div id="gameContainer">
+        <div id="cellContainer">
+          {options.map((value, index) => (
+            <div key={index} className="cell" onClick={() => cellClicked(index)}>
+              <div>{value}</div>
+            </div>
+          ))}
+        </div>
+        <h2 id="statusText">{statusText}</h2>
+        <button id="restartBtn" onClick={restartGame}>
+          Restart
+        </button>
       </div>
-      <h2 id="statusText">{statusText}</h2>
-      <button id="restartBtn" onClick={restartGame}>
-        Restart
-      </button>
     </div>
   );
 };
